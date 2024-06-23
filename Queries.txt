@@ -1,0 +1,75 @@
+use db_corleone;
+
+create table tb_clientes (
+	cpf varchar(14) not null primary key,
+	login varchar(20),
+	nome varchar(70),
+	email varchar(60),
+	nascimento varchar(10),
+	cep varchar(9),
+	endereco varchar(70),
+	numero varchar(5),
+	complemento varchar(60),
+	bairro varchar(50),
+	cidade varchar(40),
+	uf varchar(2),
+	tel varchar(14),
+	senha varchar(20),
+	status varchar(7),
+	foto varchar(255)
+);
+
+create table tb_funcionarios (
+	cpf varchar(14) not null primary key,
+	login varchar(20),
+	nome varchar(70),
+	nascimento varchar(10),
+	email varchar(60),
+	tel varchar(14),
+	senha varchar(20),
+	status varchar(7),
+	foto varchar(255)
+)
+
+create table tb_boss (
+	login varchar(20) not null primary key,
+	senha varchar(20),
+	funcionamento varchar(7)
+);
+
+create table tb_produtos (
+	id varchar(6) not null primary key,
+	categoria varchar(30),
+	subcategoria varchar (30),
+	produto varchar(60),
+	descricao varchar(255),
+	preco decimal(5,2),
+	disponibilidade varchar(12),
+	fot varchar(255)
+);
+
+create table tb_carrinho (
+	cpf varchar(14),
+	produto varchar(255),
+	qtde varchar(3),
+	preco varchar(6)
+);
+
+create table tb_pedidos (
+	cpf varchar(14),
+	nome varchar(80),
+	produtos varchar(255),
+	preco varchar(6),
+	entrega varchar(6),
+	data varchar(10),
+	hora varchar(8),
+	status varchar(40)
+);
+
+create table tb_historico (
+	cpf varchar(14),
+	produtos varchar(255),
+	preco varchar(6),
+	data varchar(10),
+	hora varchar(8),
+);
